@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Supercharge your productivity with Ember.js</title>
+		<title>Client MVC != Server MVC</title>
 
-		<meta name="description" content="Supercharge your productivity with Ember.js">
+		<meta name="description" content="Client MVC != Server MVC">
 		<meta name="author" content="Jeremy Green">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,20 +42,24 @@
 
         <section data-background="img/lan_su_tomster.jpg" data-state="intro">
           <!--img src="img/ThatConfLogo.png" class="no-border"/-->
-          <br/><br/><br/>
-          <br/><br/><br/>
-          <br/><br/><br/>
-          <br/><br/><br/>
-          <br/>
-          <h1 class="smaller-yet">Supercharge your productivity with Ember.js</h1>
+          
+          <h1 class="smallest">Client MVC != Server MVC</h1>
           <!--div class="subtitle fragment">
             <h3>Stumbling towards SOA</h3>
             <h3>The story of CloudHDR</h3>
           </div-->
         </section>
 
+        <section>
+          <h1 class="smallest">Client MVC != Server MVC</h1>
+          <br/><br/>
+          <h2>Strategies for teaching Ember to Rails* Developers</h2>
+          <br/><br/>
+          <p>*Or other server side MVC</p>
+        </section>
 
 
+<!--
 <section>
   <h1>Show of hands</h1>
   <br/>
@@ -67,9 +71,25 @@
     <li class="fragment fade-in">Who has experience with Rails or .NET MVC?</li>
   </ul>
 </section>
+-->
 
+<section data-background="img/lan_su_tomster.jpg" data-state="intro">
+  <h1>Set the stage</h1>
+  <aside class="notes">
+    Ember is a tool, and like all tools you should understand how and when to use it.
+    Like knowing when to use a hammer instead of a saw, it's important to know when to use Ember instead of something else.
+    To do that it's helpful to think about what kind of problem Ember solves.
+    Is it "build a website"?
+          "build a website plus some JS?"
+          "build an application?"
+          "build a well structured application?"
+    So, a useful question to get started thinking about where Ember fits in is:
+  </aside>
+</section>
 
 <section>
+  <h1>Set the stage</h1>
+  <br/><br/>
   <h2>Where does the face<br/>of your web app live?</h2>
   <br/><br/>
   <h2 class="">Where is it generated?</h2>
@@ -106,7 +126,7 @@
     <li>Rebuilding the <code>a</code> tag</li><br/>
     <li>Data retrieval &amp; display<br/></li><br/>
     <li>User interaction<br/></li><br/>
-    <li>Data synching<br/></li><br/>
+    <li>Data binding<br/></li><br/>
     <li>Manipulating the URL<br/></li><br/>
     <li>Setting up initial state<br/></li><br/>
   </ul>
@@ -150,6 +170,7 @@
     </div>
   </ul>
 </section>
+<!--
 <section>
   <h3>Over Simplified Request Path</h3>
   <br />
@@ -160,6 +181,7 @@
   <div class="fade-in">&darr;<br />View</div>
   <div class="fade-in">&darr;<br />Template</div>
 </section>
+-->
 <!--
 <section>
   <h2>Let's compare with Rails MVC<span class="fragment fade-in">+</span></h2>
@@ -212,49 +234,191 @@
   </table>
 </section>
 -->
+
+<section data-background="img/elephant_tomster.jpg" data-state="title-slide">
+  <h1 class="smallest"><code>where Ember == Rails</code></h1>
+</section>
+
 <section>
-  <h3>Comparison with Rails - Similarities</h3>
-  <h3>Ember <=> Rails</h3>
-  <br />
-  <div class="fragment fade-in">
-    <p>Router <=> config/routes.rb</p>
+  <h1 class="smallest"><code>where Ember == Rails</code></h1>
+
+
+  <div class="fade-in">
+    <h3><code>Router == config/routes.rb</code></h3>
     <p>Connect URLs to code paths</p>
-    <hr/>
   </div>
 
-  <div class="fragment fade-in">
-    <p>Model <=> Model</p>
+  <pre class="fragment fade-in"><code class="ruby">
+  # Rails config/routes.rb
+  Rails.application.routes.draw do
+    get 'about' => 'static_pages#about', :as => :about
+  end
+  </code></pre>
+
+  <pre class="fragment fade-in"><code class="javascript">
+  // Ember Router
+  App.Router.map(function(){
+    this.route('about');
+  });
+  </code></pre>
+
+</section>
+
+
+<section>
+  <h1 class="smallest"><code>where Ember == Rails</code></h1>
+
+  <div class="fade-in">
+    <h3><code>Model == Model</code></h3>
     <p>Object wrapper for business data</p>
-    <hr/>
+  </div>
+  <div class="fragment fade-in">
+  <pre><code>
+  # Rails db/schema.rb
+  create_table "patterns" do |t|
+    t.integer   "p1"
+    t.integer   "p2"
+    t.integer   "p3"
+    # ...
+  end
+  </code></pre>
+  <pre><code class="ruby">
+  class Pattern < ActiveRecord::Base
+    def name
+      "#{p1}-#{p2}-#{p3}"
+    end
+  end
+  </code></pre>
+  </div>
+</section>
+
+
+<section>
+  <h1 class="smallest"><code>where Ember == Rails</code></h1>
+
+  <div class="fade-in">
+    <h3><code>Model == Model</code></h3>
+    <p>Object wrapper for business data</p>
+  </div>
+  <div class="fragment fade-in">
+  <pre><code class="javascript">
+  App.Pattern = DS.Model.extend({
+    p1 : DS.attr('number'),
+    p2 : DS.attr('number'),
+    p3 : DS.attr('number'),
+
+    name : function(){
+      return this.get('p1') + '-' +
+             this.get('p2') + '-' +
+             this.get('p3');
+    }.property('p1','p2','p3')
+  });
+  </code></pre>
+  </div>
+</section>
+
+
+<section data-background="img/elephant_tomster.jpg" data-state="title-slide">
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+</section>
+
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  
+  <h2><code>Rails : view == template</code></h2>
+  <h2><code>Ember : view != template</code></h2>
+  <div class="fragment fade-in">
+    <br/><br/>
+    <h3><code>Ember Views =~ JS Sprinkles</code></h3>
+    <p>Interaction &amp; DOM Logic</p>
+    <br/>
   </div>
 
   <div class="fragment fade-in">
-    <p>Templates <=> Templates</p>
+    <h3><code>Templates == Templates</code></h3>
     <p>Markup for UI</p>
   </div>
 </section>
 
 <section>
-  <h3>Comparison with Rails - Differences</h3>
-  <h3>Ember <=> Rails</h3>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h2>What is a Route?</h2>
+
+  <pre class="fragment fade-in"><code class="ruby">
+  # Rails config/routes.rb
+  get 'about' # <-- This line is commonly called a route.
+  </code></pre>
+
+  <pre class="fragment fade-in"><code class="javascript">
+  // Ember Router
+  this.route('about'); // <-- This line is commonly called ???
+                       // A line in the router?
+                       // It is NOT a Route.
+  </code></pre>
+</section>
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h3><code>Rails : Route IN the router&nbsp;&nbsp;&nbsp;</code></h3>
+  <h3><code>Ember : Route AFTER the router</code></h3>
+</section>
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h3>What happens after URL mapping?</h3>
+  <div class="fragment fade-in">
+  <pre><code class="ruby">
+  # app/controllers/pages_controller.rb
+  class PagesController < ApplicationController
+    def about
+      @authors = Author.all
+    end
+  end
+  </code></pre>
+  </div>
+  <pre class="fragment fade-in"><code>
+  App.AboutRoute = Ember.Route.extend({
+    model : function(){
+      return this.store.find('author');
+    }
+  });
+  </code></pre>
+</section>
+
+
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h3>So Ember Route == Rails Controller?</h3>
+  <br/>
+  <h3>Not exactly</h3>
   <br/>
   <div class="fragment fade-in">
-    <p>Route <=> GET Controller actions (index, new, edit)</p>
-    <p>Setup data for user interaction</p>
-    <hr/>
+    <h3><code>Route =~ GET Controller actions</code></h3>
+    <p>Setup data for user interaction (index, new, edit, show)</p>
   </div>
-
+</section>
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h3>So, what about Ember Controllers?</h3>
+  <br/>
   <div class="fragment fade-in">
-    <p>Controller <=> Other Controller actions (create, etc...)</p>
-    <p>Handle user interactions and input</p>
-    <hr/>
+    <h3><code>Controller =~ [POST|PUT|DELETE] Controller actions</code></h3>
+    <p>Handle user interactions and input (create, update, delete)</p>
   </div>
 
+</section>
 
-  <div class="fragment fade-in">
-    <p>Views <=> jQuery Sprinkle</p>
-    <p>Interaction &amp; DOM Logic</p>
-  </div>
+<section>
+  <br/>
+  
+
+  
+
+
+  
 
 </section>
 
