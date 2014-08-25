@@ -118,3 +118,7 @@ iframe{
   max-width:160% !important;
   max-height:160% !important;
 }
+
+table.comparison th, table.comparison td{
+  padding:10px;
+}

@@ -58,6 +58,52 @@
           <p>*Or other server side MVC</p>
         </section>
 
+<section>
+  <table border="0" class="vert-middle" width="100%">
+    <tr>
+      <td colspan="2">
+        <h3>A bit about me</h3>
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br />
+        <h3>Jeremy Green</h3>
+        <h3>Consultant (I'm available, call me.)</h3>
+        <h4>Organizer of OkcRuby.org</h4>
+        <h4>Also into drumming, photography, and brewing</h4>
+        <!--h4 class="fragment fade-in">okc dev community enthusiast - okcruby.org, okcjs.org</h4-->
+      </td>
+    </tr>
+    <tr class="">
+      <td>
+        <img src="img/octologo.png" class="no-border">
+      </td>
+      <td>
+        @jagthedrummer <br />
+        jeremy@octolabs.com <br />
+        <a href="http://www.octolabs.com/">http://www.octolabs.com/</a>
+      </td>
+    </tr>
+  </table>
+  <aside class="notes">
+    These items are in chronological order.<br />
+    I've been drumming much more than half my life.<br />
+    Coding, just about half.<br />
+    * next fragment * <br />
+    Thanks to Jesse and Vance of okcjs for organizing Thunder Plains.
+    * next fragment * <br />
+    I'm historically bad at Twitter, but trying to get better.<br />
+    Contacting me through OctoLabs is more reliable.
+  </aside>
+</section>
+
+<section>
+  <a href="http://watch.canary.io">http://watch.canary.io</a>
+  <hr />
+  <img src="img/canary-watch.gif" class="no-border"/>
+</section>
 
 <!--
 <section>
@@ -73,7 +119,8 @@
 </section>
 -->
 
-<section data-background="img/lan_su_tomster.jpg" data-state="intro">
+<section data-background="img/stage-tomster.jpg" data-state="intro">
+  <br/><br/>
   <h1>Set the stage</h1>
   <aside class="notes">
     Ember is a tool, and like all tools you should understand how and when to use it.
@@ -88,6 +135,7 @@
 </section>
 
 <section>
+  <br/><br/>
   <h1>Set the stage</h1>
   <br/><br/>
   <h2>Where does the face<br/>of your web app live?</h2>
@@ -235,7 +283,10 @@
 </section>
 -->
 
-<section data-background="img/elephant_tomster.jpg" data-state="title-slide">
+<section data-background="img/city-hall-1-tomster.jpg" data-state="title-slide">
+  <br/><br/>
+  <br/><br/>
+  <br/>
   <h1 class="smallest"><code>where Ember == Rails</code></h1>
 </section>
 
@@ -318,7 +369,7 @@
 </section>
 
 
-<section data-background="img/elephant_tomster.jpg" data-state="title-slide">
+<section data-background="img/city-hall-2-tomster.jpg" data-state="title-slide">
   <h1 class="smallest"><code>where Ember != Rails</code></h1>
 </section>
 
@@ -329,7 +380,7 @@
   <h2><code>Ember : view != template</code></h2>
   <div class="fragment fade-in">
     <br/><br/>
-    <h3><code>Templates == Templates</code></h3>
+    <h3><code>Template == Template</code></h3>
     <p>Markup for UI</p>
   </div>
 
@@ -362,7 +413,7 @@
 <section>
   <h1 class="smallest"><code>where Ember != Rails</code></h1>
   <br/>
-  <h3><code>Rails : Route IN the router&nbsp;&nbsp;&nbsp;</code></h3>
+  <h3><code>Rails : route IN the router&nbsp;&nbsp;&nbsp;</code></h3>
   <h3><code>Ember : Route AFTER the router</code></h3>
 </section>
 <section>
@@ -394,7 +445,7 @@
   <br/>
   <h3>So Ember Route == Rails Controller?</h3>
   <br/>
-  <h3>Not exactly</h3>
+  <h3 class="fragment fade-in">Not exactly</h3>
   <br/>
   <div class="fragment fade-in">
     <h3><code>Route =~ GET Controller actions</code></h3>
@@ -410,8 +461,9 @@
     <h3><code>Controller =~ [POST|PUT|DELETE] Controller actions</code></h3>
     <p>Handle user interactions and input (create, update, delete)</p>
   </div>
-
 </section>
+
+
 
 <!--
 <section>
@@ -478,47 +530,93 @@
 </section>
 -->
 
-<section>
-  <table border="0" class="vert-middle" width="100%">
-    <tr>
-      <td colspan="2">
-        <h3>A bit about me</h3>
-        <hr />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <br />
-        <h3>Jeremy Green</h3>
-        <h3>Consultant (I'm available, call me.)</h3>
-        <h4>Also into drumming, photography, and brewing</h4>
-        <!--h4 class="fragment fade-in">okc dev community enthusiast - okcruby.org, okcjs.org</h4-->
-        <h4>Organizer of OkcRuby.org</h4>
 
-      </td>
+<section data-background="img/water_tomster.jpg" data-state="title-slide">
+  <h1>Wrap Up</h1>
+</section>
+
+<section>
+  <h1>Wrap Up</h1>
+  <br/><br/>
+  <h2>Ember is opinionated</h2>
+  <br/><br/>
+  <h2>Don't try to fight it</h2>
+  <br/><br/>
+  <h2>Just learn about<br/>those opinions</h2>
+</section>
+
+<section>
+  <h1 class="smaller-yet">Handy comparisons</h1>
+  <table class="comparison">
+    <tr>
+      <th>Ember</th>
+      <th>&nbsp;&nbsp;=~&nbsp;&nbsp;</th>
+      <th>Rails</th>
     </tr>
-    <tr class="">
+    <tr>
+      <td>Router</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>config/routes.rb</td>
+    </tr>
+    <tr>
+      <td>Model</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>Model</td>
+    </tr>
+    <tr>
+      <td>Template</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>Template</td>
+    </tr>
+    <tr>
+      <td>Views</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>JS Sprinkles</td>
+    </tr>
+    <tr>
+      <td>Route</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>GET Controller actions</td>
+    </tr>
+    <tr>
+      <td>Controller</td>
+      <td>&nbsp;&nbsp;=~&nbsp;&nbsp;</td>
+      <td>[POST|PUT|DELETE] Controller actions</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>When to use Ember?</h2>
+  <br/><br/>
+  <h2>When NOT to use Ember?</h2>
+</section>
+
+
+
+<section data-background="img/la-jolla-tomster.jpg" data-state="title-slide last-slide">
+   <h1 class="smaller-yet">Thanks For Watching!</h1>
+
+   <table border="0" class="vert-middle">
+    <tr>
+      <td>
+        <p>@jagthedrummer</p>
+        <p>jeremy@octolabs.com</p>
+        <p><a href="http://www.octolabs.com/emberfest2014">http://www.octolabs.com/emberfest2014</a></p>
+      </td>
       <td>
         <img src="img/octologo.png" class="no-border">
       </td>
-      <td>
-        @jagthedrummer <br />
-        jeremy@octolabs.com <br />
-        <a href="http://www.octolabs.com/">http://www.octolabs.com/</a>
-      </td>
     </tr>
   </table>
-  <aside class="notes">
-    These items are in chronological order.<br />
-    I've been drumming much more than half my life.<br />
-    Coding, just about half.<br />
-    * next fragment * <br />
-    Thanks to Jesse and Vance of okcjs for organizing Thunder Plains.
-    * next fragment * <br />
-    I'm historically bad at Twitter, but trying to get better.<br />
-    Contacting me through OctoLabs is more reliable.
-  </aside>
+
+  <h1 class="smallest">Keep Going --></h1>
+  <br/><br/><br/><br/><br/>
+  <h1 class="smallest">65 Bonus Slides</h1>
+  <h1 class="smallest">13 JSBin Examples</h1>
+
 </section>
+
 
 
 <section data-background="img/elephant_tomster.jpg" data-state="title-slide">
@@ -1379,26 +1477,7 @@
 </section>
 
 
-<section data-background="img/water_tomster.jpg" data-state="title-slide">
-  <h1>Wrap Up</h1>
-</section>
 
-<section>
-  <h1>Wrap Up</h1>
-  <br/><br/>
-  <h2>Ember is opinionated</h2>
-  <br/><br/>
-  <h2>Don't try to fight it</h2>
-  <br/><br/>
-  <h2>Just learn about those opinions</h2>
-</section>
-
-
-<section>
-  <h2>When to use Ember?</h2>
-  <br/><br/>
-  <h2>When NOT to use Ember?</h2>
-</section>
 
 <!--
 <section>
@@ -1491,29 +1570,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section data-background="img/bridge_tomster.jpg" data-state="title-slide last-slide">
+<section data-background="img/la-jolla-tomster.jpg" data-state="title-slide last-slide">
    <h1 class="smaller-yet">Thanks For Watching!</h1>
 
    <table border="0" class="vert-middle">
@@ -1521,7 +1578,7 @@
       <td>
         <p>@jagthedrummer</p>
         <p>jeremy@octolabs.com</p>
-        <p><a href="http://www.octolabs.com/thatconf2014">http://www.octolabs.com/thatconf2014</a></p>
+        <p><a href="http://www.octolabs.com/emberfest2014">http://www.octolabs.com/emberfest2014</a></p>
       </td>
       <td>
         <img src="img/octologo.png" class="no-border">
@@ -1530,6 +1587,22 @@
   </table>
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
