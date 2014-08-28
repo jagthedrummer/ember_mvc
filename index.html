@@ -105,6 +105,21 @@
   <img src="img/canary-watch.gif" class="no-border"/>
 </section>
 
+
+<section>
+  <h1 class="smaller">A talk in two parts</h1>
+  <br/>
+  <ol>
+    <li>Compare/Contrast Ember <=> Rails<br/><br></li>
+    <li>Step through building a small app</li>
+  </ol>
+  <br/><br/>
+  <div class="fragment fade-in">
+    <hr />
+    <p class="fade-in">Part 2 is bonus content for later.</p>
+  </div>
+</section>
+
 <!--
 <section>
   <h1>Show of hands</h1>
@@ -388,10 +403,45 @@
     <br/>
     <h3><code>Ember Views =~ JS Sprinkles</code></h3>
     <p>Interaction &amp; DOM Logic</p>
+    <p>Ember Components are VERY similar</p>
   </div>
-
-  
 </section>
+
+
+<section>
+  <h1 class="smaller-yet">Components &amp; Views</h1>
+  <br />
+  <h3>Interaction &amp; DOM logic</h3>
+  <br />
+  <p class="fragment fade-in">This is the place for jQuery DOM selectors and<br/>integration with other JS libs.</p>
+</section>
+
+<section>
+  <h1 class="smaller-yet">Components vs. Views</h1>
+  <br/><br/>
+  <h2>Component</h2>
+  <ul>
+    <li>Isolated (No application context)</li>
+    <li>Only knows about whatever you pass in to it</li>
+  </ul>
+  <br/><br/>
+  <div class="fragment fade-in">
+  <h2>View</h2>
+  <ul>
+    <li>Not-Isolated (Has appication context)</li>
+    <li>Knows about the controller for the current template</li>
+  </ul>
+  </div>
+</section>
+<section>
+  <h2 class="fade-in">Use Components<br/><br/> if possible</h2>
+</section>
+
+
+
+
+
+
 
 <section>
   <h1 class="smallest"><code>where Ember != Rails</code></h1>
@@ -455,12 +505,32 @@
 <section>
   <h1 class="smallest"><code>where Ember != Rails</code></h1>
   <br/>
-  <h3>So, what about Ember Controllers?</h3>
+  <h3>So, what about other<br/>Rails controller actions?</h3>
+  <br/>
+  
   <br/>
   <div class="fragment fade-in">
     <h3><code>Controller =~ [POST|PUT|DELETE] Controller actions</code></h3>
     <p>Handle user interactions and input (create, update, delete)</p>
   </div>
+</section>
+
+<section>
+  <h1 class="smallest"><code>where Ember != Rails</code></h1>
+  <br/>
+  <h2>Ember Controllers</h2>
+  <br/>
+  <pre><code class="javascript">
+  App.PatternsNewController = Ember.ObjectController.extend({
+    actions : {
+      savePattern : function(){
+        this.get('model').save();
+        this.transitionToRoute('pattern',this.get('model'));
+      }
+    }
+  });
+  
+  </code></pre>
 </section>
 
 
